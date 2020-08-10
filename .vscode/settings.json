@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "venv/bin/python",
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "python": "venv/bin/python"
+    }
+}
