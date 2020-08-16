@@ -3,12 +3,23 @@
 
 <body id="page-landing">
     <div id="container">
-        <h1>Proffy</h1>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Proffy">
+            <h2>Sua plataforma de estudos online</h2>
+        </div>
 
-        <p>Sua plataforma de estudos online</p>
-        
-        <button>Estudar</button>
-        <button>Dar Aulas</button>
+        <img class="hero-image" src="{{ url_for('static', filename='images/landing.svg') }}" alt="Plataforma de Estudos">
+
+        <div class="buttons-container">
+            <a class="study" href="">
+                <img src="{{ url_for('static', filename='images/icons/study.svg') }}" alt="Estudar">
+                Estudar
+            </a>
+            <a class="give-classes" href="">
+                <img src="{{ url_for('static', filename='images/icons/give-classes.svg') }}" alt="Dar Aulas">
+                Dar Aulas
+            </a>
+        </div>
     </div>
 </body>
 
