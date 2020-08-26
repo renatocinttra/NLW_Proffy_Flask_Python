@@ -13,4 +13,9 @@ def study():
     return render_template("study.html")
 
 
+@app.route('/give-classes')
+def give_classes():
+    return render_template("give-classes.html")
+
+
 app.run(debug=True)
