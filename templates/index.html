@@ -15,11 +15,16 @@
                 <img src="{{ url_for('static', filename='images/icons/study.svg') }}" alt="Estudar">
                 Estudar
             </a>
-            <a class="give-classes" href="">
+            <a class="give-classes" href="{{ (url_for('give_classes')) }}">
                 <img src="{{ url_for('static', filename='images/icons/give-classes.svg') }}" alt="Dar Aulas">
                 Dar Aulas
             </a>
         </div>
+
+        <p class="total-connections">
+            Total de 200 conexões já realizadas
+            <img src="{{ url_for('static', filename='images/icons/purple-heart.svg') }}"
+        </p>
     </div>
 </body>
 
