@@ -11,11 +11,11 @@
         <img class="hero-image" src="{{ url_for('static', filename='images/landing.svg') }}" alt="Plataforma de Estudos">
 
         <div class="buttons-container">
-            <a class="study" href="{{ url_for('study') }}">
+            <a class="study" href="{{ url_for('pageStudy') }}">
                 <img src="{{ url_for('static', filename='images/icons/study.svg') }}" alt="Estudar">
                 Estudar
             </a>
-            <a class="give-classes" href="{{ (url_for('give_classes')) }}">
+            <a class="give-classes" href="{{ (url_for('pageGiveClasses')) }}">
                 <img src="{{ url_for('static', filename='images/icons/give-classes.svg') }}" alt="Dar Aulas">
                 Dar Aulas
             </a>
