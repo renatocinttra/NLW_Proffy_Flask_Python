@@ -5,4 +5,6 @@ Objective is build a platform of study (Front-End, Back-End, and Database) named
 
 Applying the concept the Flask Factory Pattern to setup the project and structuring the folders. Next, the database will be configured in SQLite.
 
-Lesson 4 of 5.
+Lesson 4 of 5 of the course NLW#Week 2
+
+To conclude this project was necessary start other course that about concept Flask Factory Pattern. Therefore, I following the course the Python with Flask of Code Show. I am in the lesson 5 of 11.
