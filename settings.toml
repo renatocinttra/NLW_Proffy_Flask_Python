@@ -1,0 +1,14 @@
+[default]
+
+
+
+[development]
+DEBUG = true
+SECRET_KEY = '9ee79ad409464074c4ed86a0725ce7bc'
+EXTENSIONS = [
+    "proffy.ext.toolbar:init_app",
+    "proffy.ext.site:init_app"
+]
+
+
+[production]

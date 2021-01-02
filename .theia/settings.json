@@ -1,0 +1,15 @@
+{
+    "go.delveConfig": {
+        "dlvLoadConfig": {
+            "followPointers": true,
+            "maxVariableRecurse": 1,
+            "maxStringLen": 64,
+            "maxArrayValues": 64,
+            "maxStructFields": -1
+        },
+        "apiVersion": 2,
+        "showGlobalVariables": true,
+        "python.pythonPath": "/home/gitpod/.pyenv/libexec/pyenv",
+        "python.linting.pylintArgs": ["--load-plugins=pylint-flask", "pylint_flask_sqlalchemy"]
+    }
+}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body id="page-study">
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="{{ url_for('site.pageLanding') }}">
+                    <img src="{{ url_for('static', filename='img/icons/back.svg') }}" alt="voltar">
+                </a>
+                <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Proffy">
+            </div>
+            
+            <div class="header-content">
+                <strong>Esses são os proffys disponíveis</strong>
+                <form id="search-teachers">
+                    <div class="select-block">
+                        <label for="subject"> Matéria</label>
+                        <select name="subject" id="subject">
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+                            <!-- Try change to loop.index in the conditional -->
+                            {% for subject in subjects %}
+                                <option value="{{ subject }}" {{ 'selected' if filters.subject == subject }}>{{ subject }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="select-block">
+                        <label for="weekday">Dia da Semana</label>
+                        <select name="weekday" id="weekday">
+                            <option value=""disabled="" hidden="">Selecione uma opção</option>
+                            <!-- Try change to loop.index in the conditional -->
+                            {% for weekday in weekdays %}
+                                <option value="{{ weekday }}" {{ 'selected' if filters.weekday == weekday }}>{{ weekday }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <label for="time">Hora</label>
+                        <input name="time" id="time" type="time" value="{{ filters.time }}">
+                    </div>
+                    <button type="submit">Filtrar</button>
+                </form>
+            </div>
+        </header>
+
+        <main>
+            {% for proffy in proffys %}
+            <article class="teacher-item">
+                <header>
+                    <img src="{{ proffy.avatar }}" alt="{{ proffy.name }}">
+                    <div>
+                        <strong>{{ proffy.name }}</strong>
+                        <span>{{ proffy.subject }}</span>
+                    </div>
+                </header>
+                
+                <p>{{ proffy.bio }}</p>
+                
+                <footer>
+                    <p>Preço/horas<strong>R$ {{ proffy.cost }}</strong></p>
+                    <a href="https://api.whatsapp.com/send?l=pt_BR&phone=55{{ proffy.whatsapp }}&text=Tenho interesse na sua aula de {{ proffy.subject }} {{ proffy.name }}" class="button" target="_blank">
+                        <img src="{{ url_for('static', filename='/img/icons/whatsapp.svg') }}" alt="Whatsapp">Entrar em contato
+                    </a>
+                </footer>
+            </article>
+            {% endfor %}
+        </main>
+    </div>
+</body>
+
+{% endblock %}
