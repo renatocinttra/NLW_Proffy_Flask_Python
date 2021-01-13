@@ -10,6 +10,9 @@ proffy/app.py
 proffy/ext/__init__.py
 proffy/ext/config/__init__.py
 proffy/ext/db/__init__.py
+proffy/ext/db/list.py
+proffy/ext/db/models_proffy.py
 proffy/ext/site/__init__.py
+proffy/ext/site/form.py
 proffy/ext/site/main.py
 proffy/ext/toolbar/__init__.py

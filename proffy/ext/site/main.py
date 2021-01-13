@@ -1,6 +1,7 @@
 from flask import render_template, request, url_for, redirect
 from flask import Blueprint
-from proffy.ext.db import proffys, subjects, weekdays
+from proffy.ext.db.list import proffys, subjects, weekdays
+from proffy.ext.site.form import ProffyForm
 
 bp = Blueprint("site", __name__)
 
@@ -32,5 +33,21 @@ def pageGiveClasses():
         return redirect(url_for("site.pageStudy"))
     else:
         return render_template(
-            "give-classes.html", subjects=subjects, weekdays=weekdays, data=data
+            "give-classes.html",
+            subjects=subjects,
+            weekdays=weekdays,
+            data=data
         )
+
+
+@bp.route("/give-classes-test", methods=["GET", "POST"])
+def pageGiveClassesTest():
+    form = ProffyForm()
+    data = request.args
+    return render_template(
+        "give-classes-test.html",
+        form=form,
+        subjects=subjects,
+        weekdays=weekdays,
+        data=data
+    )

@@ -4,8 +4,12 @@
 
 [development]
 DEBUG = true
+DEBUG_TB_INTERCEPT_REDIRECTS = true
+SQLALCHEMY_DATABASE_URI = "sqlite:///proffy.db"
 SECRET_KEY = '9ee79ad409464074c4ed86a0725ce7bc'
 EXTENSIONS = [
+    "proffy.ext.db:init_app",
+    "proffy.ext.cli:init_app",
     "proffy.ext.toolbar:init_app",
     "proffy.ext.site:init_app"
 ]

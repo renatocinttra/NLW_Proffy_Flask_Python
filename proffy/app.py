@@ -1,3 +1,4 @@
+"""Importando a classe Flask"""
 from flask import Flask
 from proffy.ext import config
 
