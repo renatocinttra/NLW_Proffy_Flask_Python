@@ -8,6 +8,7 @@ Proffy.egg-info/top_level.txt
 proffy/__init__.py
 proffy/app.py
 proffy/ext/__init__.py
+proffy/ext/cli/__init__.py
 proffy/ext/config/__init__.py
 proffy/ext/db/__init__.py
 proffy/ext/db/list.py

@@ -2,6 +2,7 @@
 import wtforms as wtf
 import wtforms.fields.html5 as wtf5
 from flask_wtf import FlaskForm
+from markupsafe import Markup
 from proffy.ext.db.list import subjects, weekdays
 
 
@@ -12,11 +13,11 @@ class ProffyForm(FlaskForm):
         [wtf.validators.DataRequired()]
     )
     avatar = wtf5.URLField(
-        "Link da sua foto <small>(comece com https://)</small>",
+        Markup("Link da sua foto <small>(comece com https://)</small>"),
         [wtf.validators.DataRequired()]
     )
     whatsapp = wtf5.TelField(
-        "Whatsapp <small>(somente número)</small>",
+        Markup("Whatsapp <small>(somente número)</small>"),
         [wtf.validators.DataRequired()]
     )
     bio = wtf.TextAreaField(
@@ -27,11 +28,11 @@ class ProffyForm(FlaskForm):
         u"Matéria",
         [wtf.validators.DataRequired()],
         choices=subjects,
-        # O valor default passa pelo validators, corrigir o problema posteriormente.
+        # TODO: O valor default passa pelo validators, corrigir o problema posteriormente.
         default=0
     )
     cost = wtf5.DecimalField(
-        "Custo da sua hora/aula<small>(R$)</small>",
+        Markup("Custo da sua hora/aula<small>(R$)</small>"),
         [wtf.validators.DataRequired()]
     )
     weekday = wtf.SelectField(
@@ -49,3 +50,4 @@ class ProffyForm(FlaskForm):
         "Até",
         [wtf.validators.DataRequired()]
     )
+    button = wtf.SubmitField("Salvar Cadastro")
