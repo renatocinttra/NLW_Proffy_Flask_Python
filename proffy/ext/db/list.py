@@ -1,4 +1,4 @@
-""" Dados contidos em lista para uso provisório até a modelage do banco estiver finalizada """
+""" Dados contidos em lista para uso provisório até a modelagem do banco estiver finalizada """
 proffys = [
     {
         "name": "Diego Fernandes",

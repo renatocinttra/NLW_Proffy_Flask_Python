@@ -8,7 +8,7 @@ class Proffys(db.Model):
     """Criação da Tabela Proffy"""
     __tablename__ = "proffys"
 
-    id = db.Column("id", db.Integer, primary_key=True)
+    id = db.Column("id", db.Integer, primary_key=True, autoincrement=True)
     name = db.Column("name", db.Unicode)
     avatar = db.Column("avatar", db.Unicode)
     whatsapp = db.Column("whatsapp", db.Unicode)
@@ -21,7 +21,7 @@ class Classes(db.Model):
 
     id = db.Column("id", db.Integer, primary_key=True)
     subject = db.Column("subject", db.Unicode)
-    cost = db.Column("cost", db.Unicode)
+    cost = db.Column("cost", db.Float)
     proffys_id = db.Column(
         "proffys_id", db.Integer, db.ForeignKey("proffys.id")
     )
@@ -38,7 +38,7 @@ class ClassSchedule(db.Model):
         "classes_id", db.Integer, db.ForeignKey("classes.id")
     )
     weekday = db.Column("weekday", db.Integer)
-    time_from = db.Column("time_from", db.Integer)
-    time_to = db.Column("time_to", db.Integer)
+    time_from = db.Column("time_from", db.Time)
+    time_to = db.Column("time_to", db.Time)
 
     classes = db.relationship("Classes", foreign_keys=classes_id)
